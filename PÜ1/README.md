@@ -1,5 +1,4 @@
 # Leistungsdiagnostik
-**(kurze Beschreibung des Ziels)**
 
 Werkzeug zur Vereinfachung und Automatisierung von Leistungstests, basierend auf EKG-Daten und Leistungswerten und Patient:innen-Daten
 
@@ -19,9 +18,9 @@ Start über Kommandozeile
 Daten müssen wie wie folgt vorliegen?
 
 ## Contributing
-**(Wer ist im Team Name + Matrikelnummer + Email)**
 
-- [Julian Huber - 123](julian.huber@mci.edu)
+- [Melisa Ata - 2110881003](am2027@mci4me.at)
+- [Nico Binder - Matrikelnummer](email)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
