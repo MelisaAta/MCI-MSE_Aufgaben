@@ -1,21 +1,21 @@
 # Leistungsdiagnostik
 
-Werkzeug zur Vereinfachung und Automatisierung von Leistungstests, basierend auf EKG-Daten und Leistungswerten und Patient:innen-Daten
+Werkzeug zur Vereinfachung und Automatisierung von Leistungstests, basierend auf EKG-Daten, Leistungswerten und Patient:innen-Daten
 
 ## Installation
 
-(Was muss man tun, bevor man das Werkzeug nutzen kann?)
+Dem Probanden wird in einem festen Zeitraum von 3 Minuten EKG-Werte und die erbrachte Leistung als Daten gespeichert.
 
 t.b.d.
 
 ## Usage
 
-(Wie benutzt man das Werkzeug. Wo müssen Daten in welcher Form liegen?)
+Die Daten werden vom Fahrradergometer als seperate Dateien gespeichert. Diese Daten werden als Zeitreihen, also den Puls und die ebrachte Leistung des Probanden in einem vorgegebenen Zeitraum, gespeichert. 
+Sie werden mittels Kommandozeile bedient, also ist ein Nutzerinterface nicht unbedingt nötig. 
 
 Start über Kommandozeile
 ```python main.py```
 
-Daten müssen wie wie folgt vorliegen?
 
 ## Contributing
 
