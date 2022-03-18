@@ -19,9 +19,8 @@ Daten müssen wie wie folgt vorliegen?
 
 ## Contributing
 
-- [Melisa Ata - 2110881003]-(am2027@mci4me.at)
+- [Melisa Ata - 2110881003] - am2027@mci4me.at
 - [Nico Binder - Matrikelnummer](email)
-- [Melisa Ata - 2110881003 (am2027@mci4me.at)]
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
