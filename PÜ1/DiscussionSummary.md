@@ -2,7 +2,8 @@
 
 ### Purpose of project
 
-...
+Eine Software, die für die diagnostizierung der Leistung anhand eines Ergometers entwickelt wurde.
+Die zu erbringende Leistung der Probanden:innen kann vom Ergometer eingestellt werden und auch die erbrachte Leistung und Elektrodiagramm werden zunächst als Daten abgespeichert. Diese Daten werden dann anhand der Software ausgewertet und visualisiert.
 
 ### Scope of project
 
