@@ -37,19 +37,19 @@ Aus diesem muss die Herzrate bestimmt werden.
 
 ### Assumptions and dependencies
 
-...
+Annahmen gelten als gewisses Risiko, das es gilt zu erkennen und zu minimieren. Eine Annahme ist in diesem Fall die Feststellung, dass die Kriterien des Auftraggebers im Lastenheft erfüllt sind. 
 
 ### Design and implementation constraints
 
-...
+Bis auf Weiteres soll das Tool mittels Kommandozeile bedient werden. Also wird es kein Nutzerinterface geben, da es anfänglich sehr einfach geschrieben werden soll.
 
 ## Risks
 
-...
+Es kann immer wieder dazu kommen, dass die Durchläufe als ungültig gelten. Es kann mehrere Gründe zum Abbruch geben, die von den Diagnostikern nach Begutachtung der Daten manuell vermerken können. Erfolgreiche und abgebrochene Daten sollen dann in seperaten Ordnern gespeichert werden.
 
 ## Known future enhancements
 
-...
+Der Auftraggeber will zunächst eine sehr einfach geschrieben Software haben, die die Daten auswertet und visualisiert. Dies kann in Zukunft natürlich weiter ausgarbeitet und verbessert werden. Beispielsweise kann das Tool in Zukunft ein Kundenfreundliches Nutzerinterace verfügen und mehr Funktionen bieten.
 
 ## References
 
@@ -57,4 +57,4 @@ Aus diesem muss die Herzrate bestimmt werden.
 
 ## Open, unresolved or TBD issues
 
-...
+Im Abschnitt "Risks" wurde erwähnt, dass es teilst zu ungültigen Durchläufen kommen kann. Dieser Fehler sollte in Zukunft, wenn möglich, behoben werden.
