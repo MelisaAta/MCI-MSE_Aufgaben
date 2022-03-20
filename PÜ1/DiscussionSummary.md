@@ -11,7 +11,7 @@ Die Software erleichtert hiermit die Datenaufnahme und -verabeitung bei der Durc
 
 ### Other background information
 
-Grundsätzli8ch ist nur der Name, die technische ID, und das Geburtsdatum der Probanden:innen erforderlich.
+Grundsätzlich ist nur der Name, die technische ID, und das Geburtsdatum der Probanden:innen erforderlich.
 
 ## Perspectives
 ### Who will use the system?
@@ -20,13 +20,13 @@ Die Software wird grundsätzlich nur vom Auftraggeber, der Hersteller von Ergome
 
 ### Who can provide input about the system?
 
-...
+Der Inout für die Daten die die Software zum Verarbeiten benötigt, wird vom Probanden zu Verfügung gestellt. Anhand eines 3 minütigen Testes wird der Puls und die erbrachte Leistung als Zeitreihe erfasst und gespeichert.
 
 
 ## Project Objectives
 ### Known business rules
 
-...
+Im Lastenheft sind alle vom Auftraggeber gegebenen Regeln für die Entwicklung von der Software im Detail beschrieben.
 
 ### System information and/or diagrams
 
