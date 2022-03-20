@@ -20,7 +20,7 @@ Start über Kommandozeile
 ## Contributing
 
 - Melisa Ata - 2110881003 - am2027@mci4me.at
-- [Nico Binder - Matrikelnummer] email
+- Nico Binder - 2110881040 - nico-binder@gmx.at
 - 
 
 ## License
