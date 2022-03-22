@@ -7,8 +7,9 @@
 ## Tabellen
 
 
-### UC 2.0. - Auswertung der Leistungsdaten
+### UC 2.3. - Analysieren der Daten auf Abbruchkriterium
 
+NOTE-JHU: Da im UML Diagramm keine Assotation zwischem UC 2.3 und Diagnostiker ist, wäre ich eher davon ausgegangen, dass das hier automatisiert abläuft. Die Eingaben die ihr beschreibt kommen dann eher in UC 2.4 ;) Sonst sehr gut.
 
 |                                | Erklärung                                                                                                                                                                               | Beispiel                                                                                                                                         |
 |--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
