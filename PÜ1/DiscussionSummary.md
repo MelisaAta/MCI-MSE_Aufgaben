@@ -37,7 +37,12 @@ Aus diesem muss die Herzrate bestimmt werden.
 
 ### Assumptions and dependencies
 
-Annahmen gelten als gewisses Risiko, das es gilt zu erkennen und zu minimieren. Eine Annahme ist in diesem Fall die Feststellung, dass die Kriterien des Auftraggebers im Lastenheft erfüllt sind. 
+(Programmierabgabe Nr.1: Annahmen gelten als gewisses Risiko, das es gilt zu erkennen und zu minimieren. Eine Annahme ist in diesem Fall die Feststellung, dass die Kriterien des Auftraggebers im Lastenheft erfüllt sind.)
+
+Die vorhandenen Dateien unterteilen sich grundsätzlich in 3 Informationsgruppen: (1) perönliche Daten zu den Probanden, (2) erbrachte Leistung während Test und die (3)aufgezeichneten EKG-Daten.
+Zur ersten Gruppe zählen die Dateien "subject_1", "subject_2" und "subject_3". In Ihnen steht die jeweilige ID-Nummer, das Geburtsjahr, die vorgesehene Leistung. Zudem wird auch die Testdauer mit 180 Sekunden, also 3 Minuten, angegeben.
+Die Dateien der zweiten sind Gruppe sind : "power_data_1", "power_data_2" und "power_data_3". Sie beinhalten die tatsächlich, pro Sekunde erfasste, erbrachte Leistung des jeweiligen Probanden.
+Die dritte Gruppe wird durch die Dateien "ecg_data_subject_1", "ecg_data_subject_2" und "ecg_data_subject_3" repräsentiert. Aus der Zeilenanzahl lässt sich schließen, dass es sich um ein EKG mit einer 1000Hz Aufzeichnung handelt.
 
 ### Design and implementation constraints
 
