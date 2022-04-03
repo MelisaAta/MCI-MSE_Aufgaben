@@ -12,7 +12,7 @@ import json
 # Software importiert die Datensätze
 # Code filtert die vorgegeben Daten heraus
 
-list_of_new_tests = [] #Erstellt eine leere liste der später Werte zugeordnet werden 
+list_of_new_tests = [] #Erstellt eine neue leere liste der später Werte zugeordnet werden 
 
 ## Überprüfen ob Dateien vorhanden sind
 
@@ -20,19 +20,21 @@ list_of_new_tests = [] #Erstellt eine leere liste der später Werte zugeordnet w
 folder_current = os.path.dirname(__file__) #os.path.dirname() auslesen des Pfades des directorys indem wir gerade arbeiten
 print(folder_current)
 folder_input_data = os.path.join(folder_current, 'input_data') #os.path.join() fügt mehrere Pfade zusammen
-print(folder_input_data) 
-for file in os.listdir(folder_input_data): #os.listdir() listet alle dateien auf, die sich in() befinden
+print(folder_input_data)
 
+def get_new_data():
 #Es sollen nur .csv Dateien beachtet werden, die dann am Ende des Pfades angehängt werden
-    if file.endswith(".csv"): 
-        file_name = os.path.join(folder_input_data, file)
-        print(file_name)
-        subject_id = file_name.split(".")[0][-1]
-        new_ecg_data= pd.read_csv(file_name)
-        list_of_new_tests.append(new_ecg_data)#Der vormals leeren Liste werden die ecg Werte übergeben
+    for file in os.listdir(folder_input_data): #os.listdir() listet alle dateien auf, die sich in() befinden
+        if file.endswith(".csv"): 
+            file_name = os.path.join(folder_input_data, file)
+            print(file_name)
+            subject_id = file_name.split(".")[0][-1]
+            new_ecg_data= pd.read_csv(file_name)
+            list_of_new_tests.append(new_ecg_data)#Der vormals leeren Liste werden die ecg Werte übergeben
+    return new_ecg_data
 
-
-new_ecg_data["Subject_3"].plot() #Die Daten werden geplottet
+new_ecg_data = get_new_data() #Funktion definiert new_ecg_data
+new_ecg_data["Subject_3"].plot() #Die Daten von Subjekt_3 werden geplottet
 
 #%% UC 2.2 Vorverarbeiten der Daten
 
