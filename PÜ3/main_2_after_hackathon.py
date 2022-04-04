@@ -1,35 +1,43 @@
 # UC 2.0
 
-#%% UC 2.1 Einlesen der Daten
-
-
-list_of_new_tests = []
-## Überprüfen ob Dateien vorhanden sind
+## Benötigte Pakete importieren
 
 import os
 import pandas as pd
+import neurokit2 as nk
+import json
 
-folder_current = os.path.dirname(__file__) 
-folder_input_data = os.path.join(folder_current, 'input_data')
-for file in os.listdir(folder_input_data):
-    
-    if file.endswith(".csv"):
+
+#%% UC 2.1 Einlesen der Daten
+# Software importiert die Datensätze
+# Code filtert die vorgegeben Daten heraus
+
+list_of_new_tests = [] #Erstellt eine leere liste der später Werte zugeordnet werden 
+
+## Überprüfen ob Dateien vorhanden sind
+
+
+folder_current = os.path.dirname(__file__) #os.path.dirname() auslesen des Pfades des directorys indem wir gerade arbeiten
+print(folder_current)
+folder_input_data = os.path.join(folder_current, 'input_data') #os.path.join() fügt mehrere Pfade zusammen
+print(folder_input_data) 
+for file in os.listdir(folder_input_data): #os.listdir() listet alle dateien auf, die sich in() befinden
+
+#Es sollen nur .csv Dateien beachtet werden, die dann am Ende des Pfades angehängt werden
+    if file.endswith(".csv"): 
         file_name = os.path.join(folder_input_data, file)
         print(file_name)
-        subject_id = file_name.split(".")[0][-1]
+        subject_id = file_name.split()
         new_ecg_data= pd.read_csv(file_name)
-## Erstellen einer Liste von Tests, die zu verarbeiten sind
-
-        list_of_new_tests.append(new_ecg_data)
+        list_of_new_tests.append(new_ecg_data)#Der vormals leeren Liste werden die ecg Werte übergeben
 
 
-new_ecg_data["Subject_3"].plot()
-
+new_ecg_data["Subject_3"].plot() #Die Daten werden geplottet
+print(new_ecg_data)
 #%% UC 2.2 Vorverarbeiten der Daten
 
 ## Anlegen einer Zeitreihe der Herzfrequenz aus den EKG-Daten
 
-import neurokit2 as nk
 
 ekg_data=pd.DataFrame()
 ekg_data["ECG"] = new_ecg_data["Subject_3"]
@@ -58,7 +66,7 @@ termination = False
 
 folder_input_data = os.path.join(folder_current, 'input_data')
 
-import json
+
 # Opening JSON file
 
 file_name = folder_input_data = os.path.join(folder_input_data, 'subject_3.json')
@@ -67,6 +75,7 @@ f = open(file_name)
  
 # returns JSON object as
 # a dictionary
+
 subject_data = json.load(f)
 
 
@@ -78,13 +87,14 @@ if maximum_hr > subject_max_hr*0.90:
     termination = True
 
 #%% UC 2.4 Erstellen einer Zusammenfassung
+##Alles so geändert, sodass print nur einmal ausgeführt werden muss
 
-print("Summary for Subject " + str(subject_data["subject_id"]))
-print("Year of birth:  " + str(subject_data["birth_year"]))
-print("Test level power in W:  " + str(subject_data["test_power_w"]))
-print(" \n")
-print("Maximum HR was: " + str(maximum_hr))
-print("Was test terminated because exceeding HR " + str(termination))
+print("Summary for Subject " + str(subject_data["subject_id"]) 
++ "\nYear of birth:  " + str(subject_data["birth_year"]) 
++ "\nTest level power in W:  " + str(subject_data["test_power_w"]) 
++ " \n\n" 
++ "Maximum HR was: " + str(maximum_hr) 
++ "\nWas test terminated because exceeding HR " + str(termination))
 
 ## Ausgabe einer Zusammenfassung
 
@@ -110,7 +120,7 @@ peaks_downsampled = peaks[peaks.index % 1000 == 0]
 
 peaks_downsampled = peaks_downsampled.reset_index(drop=True)
 peaks_downsampled = peaks_downsampled.drop(["ECG_R_Peaks"],axis=1)
-peaks_downsampled
+
 
 
 peaks_downsampled["Power (Watt)"] = pd.to_numeric(power_data_watts)
