@@ -22,9 +22,16 @@ print(folder_current)
 folder_input_data = os.path.join(folder_current, 'input_data') #os.path.join() fügt mehrere Pfade zusammen
 print(folder_input_data)
 
-def get_new_data():
-#Es sollen nur .csv Dateien beachtet werden, die dann am Ende des Pfades angehängt werden
-    for file in os.listdir(folder_input_data): #os.listdir() listet alle dateien auf, die sich in() befinden
+def get_new_data(folder_input_data):
+"""
+Es sollen nur .csv Dateien beachtet werden, die dann am Ende des Pfades angehängt werden
+
+Parameter: 
+    - folder_input_data (csv): pfad zum Ordner wo die Dateien liegen
+    
+    - return (array): Liste mit EKG-Daten
+"""
+for file in os.listdir(folder_input_data): #os.listdir() listet alle dateien auf, die sich in() befinden
         if file.endswith(".csv"): 
             file_name = os.path.join(folder_input_data, file)
             print(file_name)
