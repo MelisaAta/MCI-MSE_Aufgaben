@@ -101,6 +101,7 @@ class Test:
 
         self.average_hr_test = self.number_of_heartbeats / self.duration_test_min
 
+
         ## Calculate heart rate moving average
 
         self.hr_peaks['average_HR_10s'] = self.hr_peaks.rolling(window=10000).mean()*60*1000
@@ -137,7 +138,9 @@ class Test:
         print("Summary for Subject " + str(self.subject.subject_id))
         print("Year of birth:  " + str(self.subject.birth_year))
         print("Test level power in W:  " + str(self.subject.test_power_w))
+        print("Average HR was: " + str(self.average_hr_test))
         print("Maximum HR was: " + str(self.maximum_hr))
+        print("Variance of HR was: " + str(nk.hrv_time(self.hr_peaks, sampling_rate=1000, how=True)["HRV_MeanNN"].values[0]))
         print("Was test terminated because exceeding HR: " + str(self.terminated))
         print("Was test terminated because for other reasons: " + str(self.manual_termination))
 
@@ -171,7 +174,9 @@ class Test:
         """
         Store the test data in a JSON file
         """
+
         __data = {"User ID": self.subject_id, "Reason for test termation": self.manual_termination, "Average Heart Rate": self.average_hr_test, "Maximum Heart Rate": self.maximum_hr, "Test Length (s)": self.power_data.duration_s, "Test Power (W)": self.subject.test_power_w}
+
 
         __folder_current = os.path.dirname(__file__) 
         __folder_input_data = os.path.join(__folder_current, 'result_data')
@@ -224,10 +229,29 @@ iterator = 0                                        # Zähler, der die gefundene
 for test in list_of_new_tests:                      # Alle Tests werden nacheinander durchlaufen
     test.create_hr_data()                           # Erstelle Herzraten aus den EKG-Daten
     test.add_subject(list_of_subjects[iterator])    # Fügt einem Test die passenden Versuchspersonen hinzu
+    test.evaluate_termination()                     # Prüft Abbruchskriterien
+    test.add_power_data(list_of_power_data[iterator]) # Fügt power_data hinzu
+    test.create_plot()                              # Visualisierung der Leistunngsdaten
+    test.create_summary()                           # Zusammenfassung der Leistungsdaten
+    test.ask_for_termination()                      # Frage nach Abbruch
+    test.save_data()                                # Speicher der Daten
+
+
+
 
     """
     Fügen Sie hier den Programmablauf ein, indem Sie die Methoden und Klassen von oben nutzen
     """
 
     iterator = iterator + 1
+
+
+
+
+
+
+
+
+
+
 
