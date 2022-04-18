@@ -1,9 +1,20 @@
 # %%
 # Import external packages
 
+from asyncio.log import logger
+from matplotlib.pyplot import legend
 import pandas as pd
 import neurokit2 as nk
 import json
+import logging
+
+#%%
+#Logging
+logger_subject = logging.getLogger('subjectlogger')
+logger_termination = logging.getLogger('terminationlogger')
+
+logging.basicConfig(filename='Subject.log', level=logging.INFO,
+                    format='%(asctime)s:%(levelname)s:%(message)s')
 
 # %%
 # Definition of Classes
@@ -28,6 +39,7 @@ class Subject():
         - subject_max_hr: int
         - subject_id: int
         - test_power_w: int
+        - also log who reads every data with time and saves every manual terminated test with time
     
         """
         __f = open(file_name)
@@ -37,6 +49,8 @@ class Subject():
         self.subject_max_hr = 220 - (2022 - __subject_data["birth_year"])
         self.subject_id = __subject_data["subject_id"]
         self.test_power_w = __subject_data["test_power_w"]
+
+        logger_subject.info('Data of Subject {} has been loaded.'.format(self.subject_id))
 
 class PowerData():
     """
@@ -151,10 +165,11 @@ class Test:
         """
         Ask the diagnostician if the test should be terminated
         """
-        self.manual_termination = False
+        self.manual_termination = ""
         self.manual_termination = input("Is this test invalid? (leave blank if valid): ")
 
-        if self.manual_termination != False:
+        if self.manual_termination != "":
+            logger_termination.info('Test (Subject {}) has been terminated manually.' .format(self.subject_id))
             self.termination = True
         
 
